@@ -1,0 +1,43 @@
+/* header */
+.header_admin{
+  height: 80px;
+  background-color: #403f3f;
+}
+.header_admin .logo{
+  border-right: 1px solid #fff;
+}
+.header_admin h2{
+  color: #ffffff;
+  padding: 0 20px;
+}
+.header_admin .kcntt{
+  width: 60%;
+}
+
+/* End header */
+
+/* Silder */
+.main .silder{
+  background-color: rgba(119, 118, 118, 0.941);
+  color: #fff;
+  height: calc(100vh - 80px);
+  top:80px;
+}
+.main .silder ul{
+  padding:0;
+  margin: 0;
+}
+.main .silder ul li a{
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 15px 20px;
+  border-bottom: 1px solid #fff;
+}
+.main .silder ul li a:hover{
+  background-color: #e4e1e1;
+  color: #403f3f;
+}
+
+/* End silder */
