@@ -1,4 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import {useAuthStore} from '../components/admin/storeAdmin/storeAuth';
+
+
 import defaultLayout from '@/layout/defaultLayout.vue';
 import Home from '@/components/view/Home.vue';
 import Gioithieu from '@/components/view/Giới thiệu/Gioithieu.vue';
@@ -22,9 +25,17 @@ import ChiTiet from '@/components/admin/Quản lý nhân sự/detail.vue';
 import ChiTietGiangVien from '@/components/view/Giới thiệu/ChiTietGiangVien.vue';
 import LienHe from '@/components/view/liên hệ/LienHe.vue';
 import Login from '@/components/admin/Login.vue';
-
-
-
+import BangVangSinhVien from '@/components/admin/BangVang/BangVangSinhVien.vue';
+import TheMoiBangVangSinhVien from '@/components/admin/BangVang/create.vue';
+import SuaSinhVienTrongBangVang from "@/components/admin/BangVang/edit.vue";
+import QuanLyTinTuc from "@/components/admin/Quan lý tin tức/TinTuc.vue";
+import ThemMoiTinTuc from "@/components/admin/Quan lý tin tức/create.vue";
+import ChinhSuaTinTuc from "@/components/admin/Quan lý tin tức/update.vue";
+import ChiTietTinTuc from "@/components/admin/Quan lý tin tức/detail.vue";
+import TinTuc from "@/components/view/Tin tức/TinTuc.vue";
+import ChiTietTinTucClient from "@/components/view/Tin tức/ChiTietTinTuc.vue";
+import TuyenSinh from '@/components/view/Tuyển sinh/TuyenSinh.vue';
+import ThucTapDoanhNgiep from '@/components/view/Hỗ trợ sinh viên/ThucTapDoanhNgiep.vue';
 
 const routes = [
     {
@@ -68,6 +79,14 @@ const routes = [
                 component: TinCongNghee
             },
             {
+                path: "tin-tuc",
+                component: TinTuc
+            },
+            {
+                path: "tin-tuc/chi-tiet",
+                component: ChiTietTinTucClient
+            },
+            {
                 path: "tin-tuc/tin-cong-nghe-AI",
                 component: TinCongNgheAI
             },
@@ -91,6 +110,15 @@ const routes = [
                 path: "lien-he",
                 component: LienHe
             },
+
+            {
+                path: "tuyen-sinh",
+                component: TuyenSinh
+            },
+            {
+                path: "ho-tro-sinh-vien/thuc-tap-doanh-nghiep",
+                component: ThucTapDoanhNgiep
+            },
         ]
     },
     {
@@ -101,9 +129,10 @@ const routes = [
     {
         path: "/admin",
         component: Admin,
+        meta: { requiresAuth: true },
         children: [
             {
-                path: "trang-chu",
+                path: "",
                 component: TrangChu,
             },
             {
@@ -121,7 +150,35 @@ const routes = [
             {
                 path: "quan-ly-nhan-su/chi-tiet-nhan-su",
                 component: ChiTiet
-            }
+            },
+            {
+                path: "quan-ly-bang-vang-sinh-vien",
+                component: BangVangSinhVien
+            },
+            {
+                path: "quan-ly-bang-vang-sinh-vien/them-moi-bang-vang-sinh-vien",
+                component: TheMoiBangVangSinhVien
+            },
+            {
+                path: "quan-ly-bang-vang-sinh-vien/sua-sinh-vien-bang-vang",
+                component: SuaSinhVienTrongBangVang
+            },
+            {
+                path: "quan-ly-tin-tuc",
+                component: QuanLyTinTuc
+            },
+            {
+                path: "quan-ly-tin-tuc/them-moi-tin-tuc",
+                component: ThemMoiTinTuc
+            },
+            {
+                path: "quan-ly-tin-tuc/chinh-sua-tin-tuc",
+                component: ChinhSuaTinTuc
+            },
+            {
+                path: "quan-ly-tin-tuc/chi-tie-tin-tuc",
+                component: ChiTietTinTuc
+            },
         ]
     },
 
@@ -130,6 +187,17 @@ const routes = [
 const router = createRouter({
     history: createWebHistory(),
     routes
+});
+
+
+router.beforeEach(async (to, from, next) => {
+  const auth = useAuthStore();
+
+  if (to.meta.requiresAuth && !auth.isAuthenticated) {
+    return next('/admin-login');
+  }
+
+  next();
 });
 
 export default router;

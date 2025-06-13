@@ -4,7 +4,7 @@
       <div class="login-container">
         <div class="login">
           <i class="fas fa-user"></i>
-          <form class="frm" id="frm-login" @submit.prevent="handleSubmit" action="#" method="post">
+          <form class="frm" id="frm-login" @submit.prevent="handleSubmit" action="" method="post">
             <div class="input-group-one">
               <input type="email" v-model="email" class="username" placeholder="Email" required>
             </div>
@@ -19,18 +19,21 @@
       </div>
     </div>
   </div>
-  
+
 </template>
 
 <script setup>
-import supabase from "@/supabase";
+
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { useAuthStore } from "./storeAdmin/storeAuth";
 
 const router = useRouter();
+const authStore = useAuthStore();
 
 const email = ref('');
 const password = ref('');
+
 
 const handleSubmit = async () => {
   try {
@@ -39,23 +42,9 @@ const handleSubmit = async () => {
       return;
     }
 
-    const { data: userData } = await supabase
-      .from('account')
-      .select('*')
-      .eq('email', email.value) 
-      .single();
-    
-    if(email.value !== userData.email){
-      alert("Email không tồn tại");
-      return;
-    }
+    await authStore.login(email.value, password.value);
 
-    if(password.value !== userData.password ){
-      alert("Sai mật khẩu");
-      return;
-    }
-
-    router.push('/admin/trang-chu');
+    router.push('/admin');
 
   } catch (err) {
     alert('lỗi .Vui lòng thử lại');
@@ -63,7 +52,3 @@ const handleSubmit = async () => {
 }
 
 </script>
-
-
-
-

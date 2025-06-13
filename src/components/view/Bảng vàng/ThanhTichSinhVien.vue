@@ -25,37 +25,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Nguyễn Minh Thịnh</td>
-            <td>19CSI01</td>
-            <td>2023 - 2026</td>
-            <td>4.0</td>
-            <td>Xuất sắc</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Nguyễn Thái Tài</td>
-            <td>19CSI01</td>
-            <td>2023 - 2026</td>
-            <td>3.99</td>
-            <td>Xuất sắc</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Trịnh Thị Thùy</td>
-            <td>19CSI01</td>
-            <td>2023 - 2026</td>
-            <td>3.98</td>
-            <td>Xuất sắc</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Nguyễn Văn Sĩ</td>
-            <td>19CSI022</td>
-            <td>2023 - 2026</td>
-            <td>3.50</td>
-            <td>Xuất sắc</td>
+          <tr v-for="(item, index) in valedictorian"  :key="item.id">
+            <td>{{ index +1 }}</td>
+            <td>{{ item.fullName }}</td>
+            <td>{{ item.class}}</td>
+            <td>{{ item.course }}</td>
+            <td>{{ item.point }}</td>
+            <td>{{ item.classification }}</td>
           </tr>
         </tbody>
       </table>
@@ -73,61 +49,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Đỗ Ngọc Quang</td>
-            <td>17GSI01</td>
-            <td>2021 - 2023</td>
-            <td>3.91</td>
-            <td>Xuất sắc</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Bùi Thị Tường Vy</td>
-            <td>17CSI01</td>
-            <td>2021 - 2023</td>
-            <td>3.90</td>
-            <td>Xuất sắc</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Huỳnh Trần Đức Lập</td>
-            <td>16CIT01</td>
-            <td>2020 - 2023</td>
-            <td>3.85</td>
-            <td>Xuất sắc</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Lâm Trọng Nhân</td>
-            <td>16GSI01</td>
-            <td>2020 - 2023</td>
-            <td>3.80</td>
-            <td>Xuất sắc</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>Ngô Quang Hậu</td>
-            <td>16GSI01</td>
-            <td>2020 - 2023</td>
-            <td>3.75</td>
-            <td>Xuất sắc</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>Trương Tuấn Kiệt</td>
-            <td>16GSI01</td>
-            <td>2020 - 2023</td>
-            <td>3.70</td>
-            <td>Xuất sắc</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>Nguyễn Phát Tân</td>
-            <td>16GSI01</td>
-            <td>2020 - 2023</td>
-            <td>3.68</td>
-            <td>Xuất sắc</td>
+          <tr v-for="(item, index) in excellentGraduates"  :key="item.id">
+            <td>{{ index +1 }}</td>
+            <td>{{ item.fullName }}</td>
+            <td>{{ item.class}}</td>
+            <td>{{ item.course }}</td>
+            <td>{{ item.point }}</td>
+            <td>{{ item.classification }}</td>
           </tr>
         </tbody>
       </table>
@@ -140,67 +68,51 @@
             <th>HỌ TÊN SINH VIÊN</th>
             <th>LỚP</th>
             <th>KHOÁ HỌC</th>
+            <th>ĐIỂM TÍCH LŨY</th>
+            <th>XẾP LOẠI</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Ngô Hải Phúc</td>
-            <td>17CIT02</td>
-            <td>2021 - 2024</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Tạ Thị Ngọc Hân</td>
-            <td>17CSI01</td>
-            <td>2021 - 2024</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Võ Thị Tuyết Ngân</td>
-            <td>17CSI01</td>
-            <td>2021 - 2024</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Nguyễn Kim Ngọc</td>
-            <td>17CSI01</td>
-            <td>2021 - 2024</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>Nguyễn Phát Triển</td>
-            <td>17CSI01</td>
-            <td>2021 - 2024</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>Lý Hoàng Phúc</td>
-            <td>17CSI01</td>
-            <td>2021 - 2024</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>Huỳnh Tuấn Lộc</td>
-            <td>17CSI01</td>
-            <td>2021 - 2024</td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td>Trần Văn Trí</td>
-            <td>16CSI01</td>
-            <td>2020 - 2023</td>
+          <tr v-for="(item, index) in good"  :key="item.id">
+            <td>{{ index +1 }}</td>
+            <td>{{ item.fullName }}</td>
+            <td>{{ item.class}}</td>
+            <td>{{ item.course }}</td>
+            <td>{{ item.point }}</td>
+            <td>{{ item.classification }}</td>
           </tr>
         </tbody>
       </table>
     </div>
 </template>
 
-<script>
-  export default {
-    name: "LectureGoldBoard",
-  };
+<script setup>
+import { useGoldBoardStore } from "@/components/admin/storeAdmin/storeBangVangSinhVien";
+import { computed, onMounted } from "vue"; 
+
+const goldBoardStore = useGoldBoardStore();
+
+const excellentGraduates = computed(() =>
+  goldBoardStore.goldBoard.filter(item => item.point >= 3.5 && item.point<3.8)
+);
+
+const valedictorian = computed(() =>
+  goldBoardStore.goldBoard.filter(item => item.point >=3.8)
+);
+
+const good = computed(() =>
+  goldBoardStore.goldBoard.filter(item => item.point < 3.5)
+);
+onMounted(async ()=>{
+  try {
+    await goldBoardStore.fetchGoldBoard();
+  } catch (error) {
+    console.log("lỗi lấy ra danh sách sinh viên trong bảng vàng");
+  }
+});
 </script>
+
+
 <style scoped>
 .student-achievements h1 {
   color: #0169BF;

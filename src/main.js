@@ -10,7 +10,8 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 const app = createApp(App)
 
-app.use(createPinia()) // 👈 phải gọi trước .mount()
+const pinia = createPinia() 
+app.use(pinia)
 app.use(router)
 
 app.mount('#app')

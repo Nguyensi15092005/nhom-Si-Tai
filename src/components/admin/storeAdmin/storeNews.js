@@ -1,10 +1,10 @@
 import { defineStore } from "pinia";
 import supabase from "@/supabase";
 
-export const useTeacherStore = defineStore('teacher', {
+export const userNews = defineStore('news', {
     state: () => ({
-        teacher: [],
-        TeacherId: null,
+        news: [],
+        NewsId: null,
     }),
     actions: {
 
@@ -14,10 +14,8 @@ export const useTeacherStore = defineStore('teacher', {
                 alert('Bạn chưa chọn ảnh !!!');
                 return; 
             }
-
             const fileName = `${Date.now()}-${file.name}`; //
-            const bucketName = 'teacher'; 
-
+            const bucketName = 'news'; 
             try {
                 // Tải tệp lên
                 const { error: uploadError } = await supabase.storage
@@ -47,14 +45,14 @@ export const useTeacherStore = defineStore('teacher', {
         },
 
         // lấy id
-        setTeacherId(id) {
-            this.TeacherId = id;
+        setNewsId(id) {
+            this.NewsId = id;
         },
 
         // lâý số lượng giảng viên 
-        async countTeacher() {
+        async countNews() {
             const { count, error } = await supabase
-                .from('teacher')
+                .from('news')
                 .select('*', { count: 'exact', head: true });
 
             if (error) {
@@ -66,15 +64,15 @@ export const useTeacherStore = defineStore('teacher', {
         },
 
         // lấy theo giảng viên theo id
-        async fetchTeacherById(id) {
+        async fetchNewsById(id) {
             const { data, error } = await supabase
-                .from('teacher')
+                .from('news')
                 .select('*')
                 .eq('id', id)
                 .single(); // Chỉ lấy một bản ghi
 
             if (error) {
-                console.error("Lỗi khi lấy giáo viên theo ID:", error);
+                console.error("Lỗi khi lấy tin tuc theo ID:", error);
                 throw error;
             }
             return data;
@@ -82,28 +80,28 @@ export const useTeacherStore = defineStore('teacher', {
 
 
         // thêm mới giảng viên
-        async addTeacher(teacher) {
+        async addNews(news) {
             const { data, error } = await supabase
-                .from('teacher')
-                .insert([teacher.value])
+                .from('news')
+                .insert([news.value])
                 .select();
 
             if (error) {
-                console.error("Lỗi Supabase khi thêm giáo viên:", error);
+                console.error("Lỗi Supabase khi thêm tin tuc:", error);
                 throw error; // Ném lỗi 
             }
 
             if (data && data.length > 0) {
-                this.teacher.push(data[0]); // Đẩy đối tượng giáo viên đầu tiên vào state
+                this.news.push(data[0]); // Đẩy đối tượng giáo viên đầu tiên vào state
             }
 
             return data; // Trả về dữ liệu đã chèn
         },
 
         // Cập nhật Giảng viên 
-        async updateTeacher(id, newData) {
+        async updateNews(id, newData) {
             const { data, error } = await supabase
-                .from('teacher')
+                .from('news')
                 .update(newData)
                 .eq('id', id)
                 .select('*')
@@ -112,9 +110,9 @@ export const useTeacherStore = defineStore('teacher', {
                 throw error;
             }
             if (data && data.length > 0) {
-                const teacherId = this.teacher.findIndex(item => item.id === id);
-                if (teacherId !== -1) {
-                    this.teacher[teacherId] = data[0]; // Cập nhật bản ghi trong state
+                const newsId = this.news.findIndex(item => item.id === id);
+                if (newsId !== -1) {
+                    this.news[newsId] = data[0]; // Cập nhật bản ghi trong state
                 }
             } else {
                 console.warn("Cập nhật thành công");
@@ -126,7 +124,7 @@ export const useTeacherStore = defineStore('teacher', {
         // Xóa Giảng viên
         async delete(id) {
             const { error } = await supabase
-                .from('teacher')
+                .from('news')
                 .delete()
                 .eq('id', id);
 
@@ -136,19 +134,19 @@ export const useTeacherStore = defineStore('teacher', {
             }
 
             // Xoá thành công thì cập nhật lại state
-            this.teacher = this.teacher.filter(teacher => teacher.id !== id);
+            this.news = this.news.filter(news => news.id !== id);
         },
 
 
         // lấy tất cả giáo viên
-        async fetchTeacher() {
+        async fetchNews() {
             const { data, error } = await supabase
-                .from('teacher')
+                .from('news')
                 .select('*')
             if (error) {
-                alert("lỗi đọc danh sách giảng viên");
+                alert("lỗi đọc danh sách tin tuc");
             }
-            this.teacher = data
+            this.news = data
             // console.log("Dữ liệu teacher trong store:", this.teacher);
         }
     },

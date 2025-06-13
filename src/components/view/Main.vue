@@ -104,13 +104,13 @@
           <router-link to="/bang-vang">Bảng vàng</router-link>
         </li>
         <li>
-          <router-link to="">Hỗ trợ sinh viên</router-link>
+          <router-link to="/ho-tro-sinh-vien/thuc-tap-doanh-nghiep">Hỗ trợ sinh viên</router-link>
         </li>
         <li>
           <router-link to="">Hội thảo chuyên đề</router-link>
         </li>
         <li>
-          <router-link to="">Thông báo</router-link>
+          <router-link to="/tin-tuc">Tin tức</router-link>
         </li>
         <li>
           <router-link to="/tin-tuc/tin-cong-nghe">Tin công nghệ</router-link>
@@ -119,7 +119,7 @@
           <router-link to="">Việc làm</router-link>
         </li>
         <li>
-          <router-link to="">Truyển sinh</router-link>
+          <router-link to="/tuyen-sinh">Truyển sinh</router-link>
         </li>
       </ul>
     </div>
@@ -151,24 +151,6 @@
         <p>Thực tập sinh Tư vấn triển khai phần mềm</p>
       </div>
     </div>
-    <!-- <div class="col-4 inner-right">
-      <div class="login-container">
-        <div class="login">
-          <i class="fas fa-user"></i>
-          <form class="frm" id="frm-login" action="#" method="">
-            <div class="input-group-one">
-              <input type="text" name="username" class="username" placeholder="User ID" required>
-            </div>
-            <div class="input-group-two">
-              <input type="password" name="password" class="password" placeholder="Password" required>
-            </div>
-            <div class="btn-submit">
-              <button type="submit" class="login-btn">Đăng Nhập</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div> -->
   </div>
 </template>
 
