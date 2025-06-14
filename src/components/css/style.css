@@ -68,7 +68,9 @@
   }
   .partner-logo-one{
     background-image: url('/image/logo-dpi.jpg');
-    background-size: cover;
+    /* background-size: cover; */
+    background-size: 100% 170px;
+    background-repeat: no-repeat;
     width: 49%;
     height: 200px;
     border-radius: 10px;
@@ -180,7 +182,7 @@
     height: 200px;
     padding: 10px;
     border-bottom: 1px solid #0169BF;
-    display: flex;
+    display: flex; /* <-- làm cho ảnh và chữ dàn đều trong mỗi .recruimentrecruiment, mặc định bên trái  */
     align-items: center;
   }
   .inner-recruitment .recruitment:hover{
@@ -280,7 +282,7 @@
     position: relative;
     background-image: url('/image/noibat1.jpg'); 
     background-size: cover; 
-    background-repeat: no-repeat; /* Tùy chọn */
+    background-repeat: no-repeat; /* Tùy chọn ngăn hình lặp lại*/
     color: white; 
     padding: 20px;
     margin: 10px;
@@ -348,7 +350,7 @@
   }
   
   .dot {
-    background-color: #2b07fb;
+    background-color: #0169BF;
     border-radius: 50%;
     height: 10px;
     width: 10px;
@@ -374,6 +376,7 @@
     text-align: center;
     color:#0169BF;
     padding: 10px;
+    padding-top: 40px;
   }
   .flex-container .inner-item-content p{
     font-size: 18px;

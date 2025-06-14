@@ -6,7 +6,7 @@
       </router-link>
     </li>
 
-    <li class="inner-hover hover_Introduce text-center">
+    <li class="inner-hover hover_Introduce text-center ">
       <router-link to="/gioi-thieu" class="inner">
         Giới thiệu
         <i class="pi pi-angle-down"></i>
@@ -39,72 +39,32 @@
     </li>
 
     <li class="inner-hover hover_Support text-center">
-      <a href="#" class="inner">
+      <router-link to="/ho-tro-sinh-vien/thuc-tap-doanh-nghiep" class="inner">
         Hỗ trợ sinh viên
         <i class="pi pi-angle-down"></i>
-      </a>
+      </router-link>
       <div class="tia"></div>
       <ul class="inner-menu inner-menu_Support">
         <li>
-          <a href="">Liên thông đại học</a>
-        </li>
-        <li>
-          <a href="">Học bổng, khuyến khích học tập</a>
-        </li>
-        <li>
-          <a href="">Thực tập doanh nghiệp</a>
-        </li>
-        <li>
-          <a href="">Việc làm</a>
+          <router-link to="/ho-tro-sinh-vien/thuc-tap-doanh-nghiep">Thực tập doanh nghiệp</router-link>
         </li>
       </ul>
     </li>
 
     <li class="inner-hover hover_News text-center">
-      <a href="#" class="inner">
+      <router-link to="/tin-tuc" class="inner">
         Tin tức
         <i class="pi pi-angle-down"></i>
-      </a>
+      </router-link>
       <div class="tia"></div>
-      <ul class="inner-menu inner-menu_News">
-        <li>
-          <a href="">Thông báo</a>
-        </li>
-        <li>
-          <a href="">Tin công nghệ</a>
-        </li>
-        <li>
-          <a href="">Tin hoạt động</a>
-        </li>
-        <li>
-          <a href="">Hội thảo chuyên đề</a>
-        </li>
-      </ul>
     </li>
 
     <li class="inner-hover hover_Admissions text-center">
-      <a href="#" class="inner">
+      <router-link to="/tuyen-sinh" class="inner">
         Tuyển sinh
         <i class="pi pi-angle-down"></i>
-      </a>
+      </router-link>
       <div class="tia"></div>
-      <ul class="inner-menu inner-menu_Admissions">
-        <li>
-          <a href="">Thông tin tuyển sinh</a>
-        </li>
-        <li>
-          <a href="">Chương trình đào tạo</a>
-        </li>
-        <li>
-          <a href="">Học phí theo tín chỉ</a>
-        </li>
-        <li>
-          <a href="">Chuẩn đầu ra</a>
-        </li>
-        <li>
-          <a href="">Quy trình đào tạo</a>
-        </li>
-      </ul>
     </li>
 
     <li class="inner-hover hover_Link text-center">
@@ -115,13 +75,7 @@
       <div class="tia"></div>
       <ul class="inner-menu inner-menu_Link">
         <li>
-          <a href="">Website HCE</a>
-        </li>
-        <li>
-          <a href="">CT TNHH phần mền Nhân Hòa</a>
-        </li>
-        <li>
-          <a href="">Trung tâm đào tạo DPI</a>
+          <a href="https://www.kthcm.edu.vn/">Website HCE</a>
         </li>
       </ul>
     </li>
@@ -142,3 +96,12 @@ import '../css/menu.css';
  import 'primeicons/primeicons.css';
 import router from '@/router';
 </script>
+<style scoped>
+/* mobile responsive */
+@media only screen and (max-width: 767px){
+  .menu .inner-hover .inner {
+    font-size: 10px;
+  }
+}
+ 
+</style>

@@ -1,11 +1,11 @@
 <template>
     <About/>
     <div class="row d-flex align-items-center justify-content-around my-4">
-        <hr class="col-5" style="border:2px solid #0169BF ;opacity: 1;">
-        <p class="col-2 text-center fs-5 fw-semibold" style="color: #0169BF;">
+        <hr class="col-md-5 col-320-4" style="border:2px solid #0169BF ;opacity: 1;">
+        <p class="col-md-2 text-center fw-semibold fs-6 fs-md-2 col-320-4" style="color: #0169BF;">
           Bài viết nổi bật
         </p>
-        <hr class="col-5" style="border:2px solid #0169BF ;opacity: 1;">
+        <hr class="col-md-5 col-320-4" style="border:2px solid #0169BF ;opacity: 1;">
     </div>
     <Main />
 </template>
@@ -20,3 +20,11 @@ export default {
   }
 };
 </script>
+<style scoped>
+/* mobile responsive */
+@media only screen and (max-width: 767px){
+   /* .custom-fs-sm {
+    font-size: 10px !important;
+    } */
+}
+</style>

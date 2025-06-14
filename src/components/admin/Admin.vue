@@ -6,6 +6,7 @@
     </div>
     <div class="col-9 text-center">
       <img class="kcntt" src="https://cntt.kthcm.edu.vn/wp-content/uploads/2024/02/cntt.png" alt="">
+      <button @click="handleLogout" class="btn btn-danger logout">Đăng xuất</button>
     </div>
   </div>
 
@@ -14,7 +15,7 @@
     <div class="col-3 silder p-0">
       <ul>
         <li>
-          <router-link to="/admin/trang-chu">
+          <router-link to="/admin">
             Trang chủ
           </router-link>
         </li>
@@ -24,13 +25,13 @@
           </router-link>
         </li>
         <li>
-          <router-link to="">
-            Bài viết nổi bật
+          <router-link to="/admin/quan-ly-bang-vang-sinh-vien">
+            Quản lý bảng vàng sinh viên
           </router-link>
         </li>
         <li>
-          <router-link to="">
-            Bài viết mới
+          <router-link to="/admin/quan-ly-tin-tuc">
+            Quản lý tin tức
           </router-link>
         </li>
       </ul>
@@ -48,12 +49,32 @@ import "../css/admin.css";
 * {
   box-sizing: border-box;
 }
+.logout{
+  margin-left: 50px;
+}
 
 #app {
   display: block;
   padding: 0;
   margin: 0;
-  width: 100%;
+  width: 98%;
   box-sizing: border-box;
+  max-width: none;
 }
+
 </style>
+
+<script setup>
+import { useRouter } from 'vue-router';
+import { useAuthStore } from "./storeAdmin/storeAuth";
+
+const router = useRouter();
+const authStore = useAuthStore();
+
+const handleLogout = async () =>{
+  await authStore.logout();
+
+  router.push("/admin-login");
+}
+
+</script>

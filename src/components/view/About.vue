@@ -2,9 +2,9 @@
   <div class="row">
     <div class="col-12 p-0">
       <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
+        <div class="carousel-inner ">
           <div class="carousel-item active position-relative">
-            <img src="/image/ảnh baner 1.jpg" class="d-block w-100" alt="...">
+            <img src="/image/ảnh baner 1.jpg" class="d-block w-100 img-fluid banner-img" alt="...">
             <div class="banner-overlay">
               <div class="inner-about">
                 <h2>
@@ -21,7 +21,7 @@
           </div>
           
           <div class="carousel-item position-relative">
-            <img src="/image/ảnh banner 2.jpg" class="d-block w-100" alt="...">
+            <img src="/image/ảnh banner 2.jpg" class="d-block w-100 img-fluid banner-img" alt="...">
             <div class="banner-overlay">
               <div class="inner-about">
                 <h2>
@@ -37,7 +37,7 @@
             </div>
           </div>
           <div class="carousel-item position-relative">
-            <img src="/image/anh_banner_3.jpg" class="d-block w-100" alt="...">
+            <img src="/image/anh_banner_3.jpg" class="d-block w-100 img-fluid banner-img" alt="...">
             <div class="banner-overlay">
               <div class="inner-about">
                 <h2>
@@ -53,7 +53,7 @@
             </div>
           </div>
           <div class="carousel-item position-relative">
-            <img src="/image/anh_banner_4.png" class="d-block w-100" alt="...">
+            <img src="/image/anh_banner_4.png" class="d-block w-100 img-fluid banner-img" alt="...">
             <div class="banner-overlay">
               <div class="inner-about">
                 <h2>
@@ -135,4 +135,51 @@
   color: white;
   font-size: 20px;
 }
+
+/* mobile responsive */
+@media only screen and (max-width: 767px){
+  .carousel-inner .banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+  }
+  .banner-overlay .inner-about h2 {
+    color: white;
+    font-size: 20px;
+  }
+  .banner-overlay .inner-about p {
+    color: white;
+    font-size: 10px;
+  }
+  .carousel-inner img {
+    width: 100%;
+    height: 650px;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+}
+.banner-overlay .inner-about {
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    max-width: 80%;
+}
+
+}
+
 </style>

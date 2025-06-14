@@ -20,7 +20,7 @@
         <img style="width: 200px; object-fit: contain;"  height="300px" :src=teacher.avatar :alt=teacher.name>
 
         <div class="form-group mt-3">
-          <button type="submit" class="btn btn-primary">Chỉnh sửa</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
         </div>
       </form>
     </div>
@@ -31,11 +31,10 @@
 // import { getTeacherId, updateTeacher } from '@/servise/Teacher';
 import { useTeacherStore } from "../storeAdmin/storeTeacher";
 import { onMounted, ref, nextTick } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
+import { useRouter } from 'vue-router';
 
 // [GET] Lấy để vẻ ra giao diện
 const teacherStore = useTeacherStore();
-const route = useRoute();
 const router = useRouter();
 const id = teacherStore.TeacherId;
 const teacher = ref({
