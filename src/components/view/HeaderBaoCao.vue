@@ -11,7 +11,11 @@
                 <h5>
                     TRƯỜNG CAO ĐẲNG KINH TẾ THÀNH PHỐ HỒ CHÍ MINH
                 </h5>
+<<<<<<< HEAD
                 <p class="pl-4 ml-5" style="padding-left: 20px;">
+=======
+                <p class="pl-4 ml-5" style="padding-left: 240px;">
+>>>>>>> b7c1d3f1c5060756c33418ef834af35d129d21c0
                     ĐỒ ÁN THIẾT KẾ WEB NÂNG CAO
                 </p>
             </div>

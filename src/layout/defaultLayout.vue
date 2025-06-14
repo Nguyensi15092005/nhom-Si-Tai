@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div class="container p-3">
     <div class="d-none d-md-none d-lg-block">
      <HeaderBaoCao/>
@@ -27,6 +28,12 @@
     <div class="d-lg-block collapse navbar-collapse container-fluid" id="mainNavbar">
       <Menu/>
     </div>
+=======
+  <div class="container p-0">
+    <HeaderBaoCao/>
+    <IHeader />
+    <Menu/>
+>>>>>>> b7c1d3f1c5060756c33418ef834af35d129d21c0
     <router-view></router-view>
     <Footer />
   </div> 
